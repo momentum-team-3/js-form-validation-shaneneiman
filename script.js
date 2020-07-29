@@ -1,9 +1,9 @@
+//Selecting parking form 
 let form = document.querySelector("#parking-form")
-let validForm
+let validForm 
 
-form.addEventListener("sumbit", validate)
-
-function validate (event) {
+// Valid function on event
+function validate(event) {
     event.preventDefault()
     removeErrorMessage()
     removeValidMessage()
@@ -22,17 +22,18 @@ function validate (event) {
         showValidMessage()
 }
 
+//Invalid Function
 function markFormAsInvalid() {
     validForm = false
 }
-
+//Remove Error Message function
 function removeErrorMessage() {
     let errorDiv = document.querySelector("#error-msg")
     if (errorDiv) {
         errorDiv.innnerHTML = ""
     }
 }
-
+//Remove Valid Message function
 function removeValidMessage() {
     let validMsg = document.querySelector("#valid-message")
     if (validMsg) {
@@ -42,17 +43,17 @@ function removeValidMessage() {
 
 // Name Validation 
 function validateName () {
-    const inputName = document.querySelector("#name-field")
+    const inputName = document.querySelector("#name")
     const name = inputName.value
-    const parentEl = inputName.parentElement
+    const nameDiv = document.querySelector("#name-field")
 
     if (name) {
-        parentEl.classList.remove("input-invalid")
-        parentEl.classList.add("input-valid")
+        nameDiv.classList.remove("input-invalid")
+        nameDiv.classList.add("input-valid")
     } else {
         console.log("Name input is invalid")
-        parentEl.classList.remove("input-valid")
-        parentEl.classList.add("input-invalid")
+        nameDiv.classList.remove("input-valid")
+        nameDiv.classList.add("input-invalid")
         markFormAsInvalid()
     }
 }
@@ -61,15 +62,15 @@ function validateName () {
 function validateCarYear () {
     const inputCarYear = document.querySelector("#car-year")
     const carYear = inputCarYear.value
-    const parentEl = inputName.parentElement
+    const carDiv = document.querySelector("#car-field")
 
     if (carYear) {
-        parentEl.classList.remove("input-invalid")
-        parentEl.classList.add("input-valid")
+        carDiv.classList.remove("input-invalid")
+        carDiv.classList.add("input-valid")
     } else {
         console.log("Name input is invalid")
-        parentEl.classList.remove("input-valid")
-        parentEl.classList.add("input-invalid")
+        carDiv.classList.remove("input-valid")
+        carDiv.classList.add("input-invalid")
         markFormAsInvalid()
     }
 }
@@ -78,15 +79,15 @@ function validateCarYear () {
 function validateCarMake () {
     const inputCarMake = document.querySelector("#car-make")
     const carMake = inputCarMake.value
-    const parentEl = inputName.parentElement
+    const carDiv = document.querySelector("#car-field")
 
     if (carMake) {
-        parentEl.classList.remove("input-invalid")
-        parentEl.classList.add("input-valid")
+        carDiv.classList.remove("input-invalid")
+        carDiv.classList.add("input-valid")
     } else {
         console.log("Name input is invalid")
-        parentEl.classList.remove("input-valid")
-        parentEl.classList.add("input-invalid")
+        carDiv.classList.remove("input-valid")
+        carDiv.classList.add("input-invalid")
         markFormAsInvalid()
     }
 }
@@ -95,106 +96,107 @@ function validateCarMake () {
 function validateCarModel () {
     const inputCarModel = document.querySelector("#car-model")
     const carModel = inputCarModel.value
-    const parentEl = inputName.parentElement
+    const carDiv = document.querySelector("#car-field")
 
     if (carModel) {
-        parentEl.classList.remove("input-invalid")
-        parentEl.classList.add("input-valid")
+        carDiv.classList.remove("input-invalid")
+        carDiv.classList.add("input-valid")
     } else {
         console.log("Name input is invalid")
-        parentEl.classList.remove("input-valid")
-        parentEl.classList.add("input-invalid")
+        carDiv.classList.remove("input-valid")
+        carDiv.classList.add("input-invalid")
         markFormAsInvalid()
     }
 }
 
 // Start Date Validation
 function validateStartDate () {
-    const inputStartDate = document.querySelector("#start-date-field")
+    const inputStartDate = document.querySelector("#start-date")
     const startDate = inputStartDate.value
-    const parentEl = inputName.parentElement
+    const startDateDiv = document.querySelector("#start-date-field")
 
     if (startDate) {
-        parentEl.classList.remove("input-invalid")
-        parentEl.classList.add("input-valid")
+        startDateDiv.classList.remove("input-invalid")
+        startDateDiv.classList.add("input-valid")
     } else {
         console.log("Name input is invalid")
-        parentEl.classList.remove("input-valid")
-        parentEl.classList.add("input-invalid")
+        startDateDiv.classList.remove("input-valid")
+        startDateDiv.classList.add("input-invalid")
         markFormAsInvalid()
     }
 }
 
 // Number of Days Validation
 function validateDays () {
-    const inputDays = document.querySelector("#days-field")
+    const inputDays = document.querySelector("#days")
     const days = inputDays.value
-    const parentEl = inputName.parentElement
+    const daysDiv = doument.querySelector("#days-field")
 
     if (days) {
-        parentEl.classList.remove("input-invalid")
-        parentEl.classList.add("input-valid")
+        daysDiv.classList.remove("input-invalid")
+        daysDiv.classList.add("input-valid")
     } else {
         console.log("Name input is invalid")
-        parentEl.classList.remove("input-valid")
-        parentEl.classList.add("input-invalid")
+        daysDiv.classList.remove("input-valid")
+        daysDiv.classList.add("input-invalid")
         markFormAsInvalid()
     }
 }
 
 // Credit Card Validation 
 function validateCard () {
-    const inputCard = document.querySelector("#credit-card-field")
+    const inputCard = document.querySelector("#credit-card")
     const card = inputCard.value
-    const parentEl = inputName.parentElement
+    const cardDiv = document.querySelector("#credit-card-field")
 
     if (card) {
-        parentEl.classList.remove("input-invalid")
-        parentEl.classList.add("input-valid")
+        cardDiv.classList.remove("input-invalid")
+        cardDiv.classList.add("input-valid")
     } else {
         console.log("Name input is invalid")
-        parentEl.classList.remove("input-valid")
-        parentEl.classList.add("input-invalid")
+        cardDiv.classList.remove("input-valid")
+        cardDiv.classList.add("input-invalid")
         markFormAsInvalid()
     }
 }
 
 // CVV Validation 
 function validateCvv () {
-    const inputCvv = document.querySelector("#cvv-field")
+    const inputCvv = document.querySelector("#cvv")
     const cvv = inputCvv.value
-    const parentEl = inputName.parentElement
+    const cvvDiv = document.querySelector("#cvv-field")
 
     if (cvv) {
-        parentEl.classList.remove("input-invalid")
-        parentEl.classList.add("input-valid")
+        cvvDiv.classList.remove("input-invalid")
+        cvvDiv.classList.add("input-valid")
     } else {
         console.log("Name input is invalid")
-        parentEl.classList.remove("input-valid")
-        parentEl.classList.add("input-invalid")
+        cvvDiv.classList.remove("input-valid")
+        cvvDiv.classList.add("input-invalid")
         markFormAsInvalid()
     }
 }
 
 // Expiration Date Validation 
 function validateExpiration () {
-    const inputExpiration = document.querySelector("#expiration-field")
-    const Expiration = inputExpiration.value
-    const parentEl = inputName.parentElement
+    const inputExpiration = document.querySelector("#expiration")
+    const expiration = inputExpiration.value
+    const expirationDiv = document.querySelector("#expiration-field")
 
-    if (Expiration) {
-        parentEl.classList.remove("input-invalid")
-        parentEl.classList.add("input-valid")
+    if (expiration) {
+        expirationDiv.classList.remove("input-invalid")
+        expirationDiv.classList.add("input-valid")
     } else {
         console.log("Name input is invalid")
-        parentEl.classList.remove("input-valid")
-        parentEl.classList.add("input-invalid")
+        expirationDiv.classList.remove("input-valid")
+        expirationDiv.classList.add("input-invalid")
         markFormAsInvalid()
     }
 }
 
+//Valid Function
 function showValidMessage () {
-    if (formIsValid) {
+    if (validForm) {
       const validMsgEl = document.createElement('h2')
       validMsgEl.id = 'valid-message'
       const validMsgText = document.createTextNode('This form is valid!')
@@ -202,3 +204,6 @@ function showValidMessage () {
       document.querySelector('main').appendChild(validMsgEl)
     }
   }
+
+//Add event lister to form run validation function on submission
+form.addEventListener("sumbit", validate)
